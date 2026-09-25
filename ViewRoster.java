@@ -1,10 +1,10 @@
-import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import javax.swing.*;
 
 public class ViewRoster extends JFrame {
 
-    private final String FILE_NAME = "roster.txt";
+    private final String FILE_NAME = "data/roster.txt";
 
     public ViewRoster() {
 

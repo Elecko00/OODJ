@@ -1,1 +1,3 @@
-D001;Dr. Alice Test;alicetest@medical.com;0198765432;General Medicine
+DR001;Dr. Alice Test;alicetest@medical.com;0198765432;General Medicine
+DR002;Dr. John;john@gmail.com;0167676767;General Medicane
+DR003;DR. Bell;bell@gmail.com;0123456789;General Medicane

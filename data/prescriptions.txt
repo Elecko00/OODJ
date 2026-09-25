@@ -1,2 +1,2 @@
-P001;PR001;D001;2026-08-07;JJ;500 mg;67;67;good
-PR002;P001;D001;2026-09-12;Medication B;10 mg;Once daily;7 days;Take after food
+PR001;P001;DR001;2026-08-07;JJ;500 mg;67;67;good
+PR002;P001;DR001;2026-09-12;Medication B;10 mg;Once daily;7 days;Take after food

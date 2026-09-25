@@ -1,3 +1,3 @@
-C001;P001;D001;2026-09-07;37.2;120/80;72;Patient have a mild fever
-C002;P001;D001;2026-05-04;38.5;130/87;89;Patient is in good condition
-C002;P001;D001;2026-09-12;36.8;120/80;72;Patient condition is stable
+C001;P001;DR001;2026-09-07;37.2;120/80;72;Patient have a mild fever
+C002;P001;DR001;2026-05-04;38.5;130/87;89;Patient is in good condition
+C002;P001;DR001;2026-09-12;36.8;120/80;72;Patient condition is stable

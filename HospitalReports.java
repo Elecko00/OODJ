@@ -1,13 +1,13 @@
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class HospitalReports extends JFrame {
 
     private final String DEPARTMENT_FILE = "departments.txt";
-    private final String ROSTER_FILE = "roster.txt";
+    private final String ROSTER_FILE = "data/roster.txt";
 
     public HospitalReports() {
 

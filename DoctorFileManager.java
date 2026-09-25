@@ -1,7 +1,8 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 public class DoctorFileManager {
@@ -11,10 +12,11 @@ public class DoctorFileManager {
         fileName = "data/doctors.txt";
     }
 
-    // 新增了 username / password 两个参数：这两个是登入时从统一的 users.txt 读到的，
-    // doctors.txt 本身没有帐密，所以要由呼叫端（Main）把登入验证时拿到的帐密传进来，
-    // 拼成一个完整的 Doctor 物件（Doctor 现在 extends User，缺username/password会编译失败）
     public Doctor loadDoctorByID(String doctorID, String username, String password) {
+        File doctorFile = new File(fileName);
+        System.out.println("Working directory: " + System.getProperty("user.dir"));
+        System.out.println("Doctor file path: " + doctorFile.getAbsolutePath());
+        System.out.println("Doctor file exists: " + doctorFile.exists());
 
         try {
             BufferedReader reader = new BufferedReader( new FileReader(fileName));

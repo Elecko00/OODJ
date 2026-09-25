@@ -1,6 +1,7 @@
 ali01|1234|U100|Ali Bin Ahmed|Patient
 siti02|5678|U101|Siti Nurhaliza|Patient
-dr001|doc123|D001|Dr. Alice Test|Doctor
+dr001|doc123|DR001|Dr. Alice Test|Doctor
+dr002|doc456|DR002|Dr. John|Doctor
 mgr001|88888|MM001|David|Manager
 mgr002|66666|MM002|Mai|Manager
 admin01|admin999|1|John Admin|Admin

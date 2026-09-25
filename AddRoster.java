@@ -1,6 +1,6 @@
-import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import javax.swing.*;
 
 public class AddRoster extends JFrame {
 
@@ -9,7 +9,7 @@ public class AddRoster extends JFrame {
     private JTextField dateField;
     private JComboBox<String> shiftBox;
 
-    private final String FILE_NAME = "roster.txt";
+    private final String FILE_NAME = "data/roster.txt";
 
     public AddRoster() {
 
@@ -32,12 +32,12 @@ public class AddRoster extends JFrame {
         JLabel shiftLabel = new JLabel("Shift:");
 
         String[] shifts = {
-                "Morning",
-                "Afternoon",
-                "Evening",
-                "Night"
+            "Morning",
+            "Afternoon",
+            "Evening",
+            "Night"
         };
-
+        
         shiftBox = new JComboBox<>(shifts);
 
         JButton saveButton = new JButton("Save");
@@ -111,6 +111,23 @@ public class AddRoster extends JFrame {
                     );
 
                     return;
+                }
+
+                File rosterFile = new File(FILE_NAME);
+
+                if (rosterFile.exists() && rosterFile.length() > 0) {
+                    try (RandomAccessFile check =
+                            new RandomAccessFile(rosterFile, "r")) {
+                        check.seek(check.length() - 1);
+                        int lastCharacter = check.read();
+
+                        if (lastCharacter != '\n' && lastCharacter != '\r') {
+                            try (FileWriter separatorWriter =
+                                    new FileWriter(rosterFile, true)) {
+                                separatorWriter.write(System.lineSeparator());
+                            }
+                        }
+                    }
                 }
 
                 FileWriter writer =

@@ -1,7 +1,7 @@
-import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
+import javax.swing.*;
 
 public class UpdateRoster extends JFrame {
 
@@ -10,7 +10,7 @@ public class UpdateRoster extends JFrame {
     private JTextField dateField;
     private JComboBox<String> shiftBox;
 
-    private final String FILE_NAME = "roster.txt";
+    private final String FILE_NAME = "data/roster.txt";
 
     public UpdateRoster() {
 
@@ -33,10 +33,10 @@ public class UpdateRoster extends JFrame {
         JLabel shiftLabel = new JLabel("Shift:");
 
         String[] shifts = {
-                "Morning",
-                "Afternoon",
-                "Evening",
-                "Night"
+            "Morning",
+            "Afternoon",
+            "Evening",
+            "Night"
         };
 
         shiftBox = new JComboBox<>(shifts);
