@@ -1,50 +1,94 @@
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 
 public class AdminPage extends JFrame {
 
     private Admin admin;
-    private JPanel sidebarPanel;
-    private JPanel contentPanel;
 
     public AdminPage(Admin admin) {
+
         this.admin = admin;
 
-        setTitle("Hospital Management System");
+        setTitle("HMS - Admin");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setMinimumSize(new Dimension(600, 400));
-        setSize(900, 600);
+        setSize(330, 330);
         setLocationRelativeTo(null);
+        setResizable(false);
 
-        setLayout(null);
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
 
-        this.sidebarPanel = new JPanel();
-        this.sidebarPanel.setBackground(Color.decode("#27374D"));
+        JLabel welcomeLabel =
+                new JLabel("Welcome, " + admin.returnName());
 
-        this.contentPanel = new JPanel();
-        this.contentPanel.setBackground(Color.decode("#526D82"));
+        welcomeLabel.setFont(
+                new Font("Arial", Font.BOLD, 13)
+        );
 
-        add(this.sidebarPanel);
-        add(this.contentPanel);
+        welcomeLabel.setBounds(17, 20, 280, 25);
 
-        this.addComponentListener(new ComponentAdapter() {
-            @Override 
-            public void componentResized(ComponentEvent e) {
-                int frameWidth = getContentPane().getWidth();
-                int frameHeight = getContentPane().getHeight();
+        JButton adminButton =
+                new JButton("Manage Admin");
 
-                int sidebarWidth = (int) (frameWidth * 0.30);
-                int contentWidth = frameWidth - sidebarWidth;
+        JButton roomButton =
+                new JButton("Manage Rooms");
 
-                sidebarPanel.setBounds(0, 50, sidebarWidth, frameHeight);
-                contentPanel.setBounds(sidebarWidth, 50 , contentWidth, frameHeight);
+        JButton insuranceButton =
+                new JButton("Manage Insurance");
 
-                revalidate();
-                repaint();
-            }
+        JButton baseFeeButton =
+                new JButton("Manage Base Fee");
+
+        JButton exitButton =
+                new JButton("Exit");
+
+        adminButton.setBounds(17, 60, 280, 30);
+        roomButton.setBounds(17, 100, 280, 30);
+        insuranceButton.setBounds(17, 140, 280, 30);
+        baseFeeButton.setBounds(17, 180, 280, 30);
+        exitButton.setBounds(17, 230, 280, 30);
+
+        panel.add(welcomeLabel);
+        panel.add(adminButton);
+        panel.add(roomButton);
+        panel.add(insuranceButton);
+        panel.add(baseFeeButton);
+        panel.add(exitButton);
+
+        add(panel);
+
+        adminButton.addActionListener(e -> {
+
+            AdminManagementFrame frame =
+                    new AdminManagementFrame();
+
+            frame.setVisible(true);
         });
+
+        roomButton.addActionListener(e -> {
+
+            RoomManagementFrame frame =
+                    new RoomManagementFrame();
+
+            frame.setVisible(true);
+        });
+
+        insuranceButton.addActionListener(e -> {
+
+            InsuranceManagementFrame frame =
+                    new InsuranceManagementFrame();
+
+            frame.setVisible(true);
+        });
+
+        baseFeeButton.addActionListener(e -> {
+
+            BaseFeeFrame frame =
+                    new BaseFeeFrame();
+
+            frame.setVisible(true);
+        });
+
+        exitButton.addActionListener(e -> dispose());
     }
 }

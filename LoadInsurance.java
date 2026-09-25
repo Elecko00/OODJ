@@ -8,7 +8,7 @@ import java.util.List;
 
 public class LoadInsurance {
     
-    private String filePath = "data/insurance_list.txt";
+    private String filePath = "data/insurance_lists.txt";
     private List<Insurance> insuranceList = new ArrayList<>();
 
     public String readInsurance() {
